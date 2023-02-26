@@ -57,7 +57,8 @@ Here is an example of a Quiz JSON object:
                 "Berlin",
                 "Rome"
             ],
-            "answer": "Paris"
+            "answer": "Paris",
+            "isMandatory": true
             },
             {
             "id": 2,
@@ -68,7 +69,8 @@ Here is an example of a Quiz JSON object:
                 "Berlin",
                 "Rome"
             ],
-            "answer": "Berlin"
+            "answer": "Berlin",
+            "isMandatory": true
             }
         ]
     }
@@ -106,104 +108,45 @@ Example:
 ```json
 Response:
 [
-       {
+    {
         "id": 1,
-        "title": "Exam 1",
-        "description": "This is the first exam.",
-        "isActivated": true,
-        "created_at": "2020-05-01T00:00:00.000Z",
-        "updated_at": null,
-        "created_by": "admin",
-        "quizQuestions": [
-            {
-            "id": 1,
-            "question": "What is the capital of France?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Paris"
-            },
-            {
-            "id": 2,
-            "question": "What is the capital of Germany?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Berlin"
-            }
-        ]
+        "title": "Biology Quiz",
+        "description": "Test your knowledge of biology!",
+        "quizQuestions": "[{\"answer\": \"Cellular respiration\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the process by which cells convert glucose into ATP?\", \"isMandatory\": true}, {\"answer\": \"Ribosome\", \"options\": [\"Mitochondria\", \"Lysosome\", \"Endoplasmic reticulum\", \"Ribosome\"], \"question\": \"What is the name of the organelle responsible for protein synthesis?\", \"isMandatory\": true}, {\"answer\": \"Photosynthesis\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the name of the process by which plants convert light energy into chemical energy?\", \"isMandatory\": true}]",
+        "isActivated": 1,
+        "created_at": "2023-02-26T15:33:57.000Z",
+        "updated_at": "2023-02-26T15:33:57.000Z",
+        "created_by": "admin"
     },
     {
         "id": 2,
-        "title": "Exam 2",
-        "description": "This is the second exam.",
-        "isActivated": true,
-        "created_at": "2020-05-01T00:00:00.000Z",
-        "updated_at": null,
-        "created_by": "admin",
-        "quizQuestions": [
-            {
-            "id": 1,
-            "question": "What is the capital of France?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Paris"
-            },
-            {
-            "id": 2,
-            "question": "What is the capital of Germany?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Berlin"
-            }
-        ]
+        "title": "Astronomy Quiz",
+        "description": "Test your knowledge of astronomy!",
+        "quizQuestions": "[{\"answer\": \"Proxima Centauri\", \"options\": [\"Alpha Centauri\", \"Betelgeuse\", \"Sirius\", \"Proxima Centauri\"], \"question\": \"What is the closest star to our solar system?\", \"isMandatory\": true}, {\"answer\": \"Ganymede\", \"options\": [\"Ganymede\", \"Europa\", \"Callisto\", \"Titan\"], \"question\": \"What is the name of the largest moon in our solar system?\", \"isMandatory\": true}, {\"answer\": \"Canis Major Dwarf\", \"options\": [\"Andromeda\", \"Canis Major Dwarf\", \"Triangulum\", \"Large Magellanic Cloud\"], \"question\": \"What is the name of the nearest galaxy to our Milky Way?\", \"isMandatory\": true}]",
+        "isActivated": 1,
+        "created_at": "2023-02-26T15:35:32.000Z",
+        "updated_at": "2023-02-26T15:35:32.000Z",
+        "created_by": "admin"
     },
     {
         "id": 3,
-        "title": "Exam 3",
-        "description": "This is the third exam.",
-        "isActivated": true,
-        "created_at": "2020-05-01T00:00:00.000Z",
-        "updated_at": null,
-        "created_by": "admin",
-        "quizQuestions": [
-            {
-            "id": 1,
-            "question": "What is the capital of France?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Paris"
-            },
-            {
-            "id": 2,
-            "question": "What is the capital of Germany?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Berlin"
-            }
-        ]
+        "title": "Programming Quiz",
+        "description": "Test your knowledge of programming!",
+        "quizQuestions": "[{\"answer\": \"13\", \"options\": [\"25\", \"13\", \"17\", \"None of the above\"], \"question\": \"What is the output of the following code: print(3 + 2 * 5)\", \"isMandatory\": true}, {\"answer\": \"def\", \"options\": [\"define\", \"function\", \"def\", \"define_function\"], \"question\": \"What is the keyword used in Python to define a function?\", \"isMandatory\": true}, {\"answer\": \"To create a new object of a class\", \"options\": [\"To create a new object of a class\", \"To define an instance method of a class\", \"To provide a way to access private variables\", \"To implement inheritance\"], \"question\": \"What is the purpose of a constructor in object-oriented programming?\", \"isMandatory\": true}]",
+        "isActivated": 1,
+        "created_at": "2023-02-26T15:37:02.000Z",
+        "updated_at": "2023-02-26T15:37:02.000Z",
+        "created_by": "admin"
+    },
+    {
+        "id": 4,
+        "title": "Random Knowledge Quiz",
+        "description": "Test your general knowledge with these difficult questions!",
+        "quizQuestions": "[{\"answer\": \"Skin\", \"options\": [\"Heart\", \"Brain\", \"Skin\", \"Liver\"], \"question\": \"What is the largest organ in the human body?\", \"isMandatory\": true}, {\"answer\": \"Vatican City\", \"options\": [\"Monaco\", \"Nauru\", \"Vatican City\", \"San Marino\"], \"question\": \"What is the smallest country in the world by land area?\", \"isMandatory\": true}, {\"answer\": \"O3\", \"options\": [\"O\", \"O2\", \"O3\", \"O4\"], \"question\": \"What is the chemical formula for ozone?\", \"isMandatory\": true}, {\"answer\": \"Mariana Trench\", \"options\": [\"Mariana Trench\", \"Puerto Rico Trench\", \"Java Trench\", \"Kermadec Trench\"], \"question\": \"What is the name of the deepest part of the ocean?\", \"isMandatory\": true}, {\"answer\": \"Antarctic\", \"options\": [\"Sahara\", \"Arabian\", \"Antarctic\", \"Gobi\"], \"question\": \"What is the largest desert in the world?\", \"isMandatory\": true}]",
+        "isActivated": 1,
+        "created_at": "2023-02-26T15:38:31.000Z",
+        "updated_at": "2023-02-26T15:38:31.000Z",
+        "created_by": "admin"
     }
 ]
 ```
@@ -221,44 +164,77 @@ POST /quiz
 **Body:**
 ```JSON
     {
-        "title": "Geography Quiz",
-        "description": "Test your knowledge of world geography!",
-        "isActivated": true,
-        "created_by": "admin",
-        "quizQuestions": [
-            {
-                "id": 1,
-                "question": "What is the only continent that lies entirely within the Eastern Hemisphere?",
-                "options": [
-                    "Africa",
-                    "Asia",
-                    "Australia",
-                    "Antarctica"
-                ],
-                "answer": "Australia"
-            },
-            {
-                "id": 2,
-                "question": "Which two countries in South America do not share a border with Brazil?",
-                "options": [
-                    "Chile and Argentina",
-                    "Colombia and Ecuador",
-                    "Peru and Bolivia",
-                    "Uruguay and Paraguay"
-                ],
-                "answer": "Chile and Argentina"
-            }
-        ]
-    }
+    "title": "Random Knowledge Quiz",
+    "description": "Test your general knowledge with these difficult questions!",
+    "quizQuestions": [
+        {
+            "question": "What is the largest organ in the human body?",
+            "options": [
+                "Heart",
+                "Brain",
+                "Skin",
+                "Liver"
+            ],
+            "answer": "Skin",
+            "isMandatory": true
+        },
+        {
+            "question": "What is the smallest country in the world by land area?",
+            "options": [
+                "Monaco",
+                "Nauru",
+                "Vatican City",
+                "San Marino"
+            ],
+            "answer": "Vatican City",
+            "isMandatory": true
+        },
+        {
+            "question": "What is the chemical formula for ozone?",
+            "options": [
+                "O",
+                "O2",
+                "O3",
+                "O4"
+            ],
+            "answer": "O3",
+            "isMandatory": true
+        },
+        {
+            "question": "What is the name of the deepest part of the ocean?",
+            "options": [
+                "Mariana Trench",
+                "Puerto Rico Trench",
+                "Java Trench",
+                "Kermadec Trench"
+            ],
+            "answer": "Mariana Trench",
+            "isMandatory": true
+        },
+        {
+            "question": "What is the largest desert in the world?",
+            "options": [
+                "Sahara",
+                "Arabian",
+                "Antarctic",
+                "Gobi"
+            ],
+            "answer": "Antarctic",
+            "isMandatory": true
+        }
+    ],
+    "isActivated": true,
+    "created_by": "admin"
+}
 ```
 
 Response:
 ```JSON
-    {
-        "error": false,
-        "message": "Quiz added successfully!",
-        "data": 1
-    }
+{
+    "error": false,
+    "message": "Quiz added successfully!",
+    "data": 4
+}
 ```
     
 
@@ -282,12 +258,12 @@ id = 1
 [
     {
         "id": 1,
-        "title": "Exam 4",
-        "description": "This is the fourth exam.",
-        "quizQuestions": "[{\"id\": 1, \"answer\": \"Paris\", \"options\": [\"Paris\", \"London\", \"Berlin\", \"Rome\"], \"question\": \"What is the capital of France?\"}, {\"id\": 2, \"answer\": \"Berlin\", \"options\": [\"Paris\", \"London\", \"Berlin\", \"Rome\"], \"question\": \"What is the capital of Germany?\"}]",
+        "title": "Biology Quiz",
+        "description": "Test your knowledge of biology!",
+        "quizQuestions": "[{\"answer\": \"Cellular respiration\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the process by which cells convert glucose into ATP?\", \"isMandatory\": true}, {\"answer\": \"Ribosome\", \"options\": [\"Mitochondria\", \"Lysosome\", \"Endoplasmic reticulum\", \"Ribosome\"], \"question\": \"What is the name of the organelle responsible for protein synthesis?\", \"isMandatory\": true}, {\"answer\": \"Photosynthesis\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the name of the process by which plants convert light energy into chemical energy?\", \"isMandatory\": true}]",
         "isActivated": 1,
-        "created_at": "2023-02-26T11:27:20.000Z",
-        "updated_at": "2023-02-26T11:27:20.000Z",
+        "created_at": "2023-02-26T15:33:57.000Z",
+        "updated_at": "2023-02-26T15:33:57.000Z",
         "created_by": "admin"
     }
 ]
@@ -306,41 +282,41 @@ Example:
 **Body:**
 ```json
 {
-    "title": "Updated Math Quiz",
-    "description": "An updated quiz to test your math skills.",
+    "title": "Biology Quiz Updated",
+    "description": "Test your knowledge of biology! Now Updated Will appear",
     "quizQuestions": [
         {
-            "id": 1,
-            "question": "What is 2 + 2?",
+            "question": "What is the process by which cells convert glucose into ATP?",
             "options": [
-                "3",
-                "4",
-                "5",
-                "6"
+                "Photosynthesis",
+                "Cellular respiration",
+                "Fermentation",
+                "Glycolysis"
             ],
-            "answer": "4"
+            "answer": "Cellular respiration",
+            "isMandatory": true
         },
         {
-            "id": 2,
-            "question": "What is the square root of 100?",
+            "question": "What is the name of the organelle responsible for protein synthesis?",
             "options": [
-                "7",
-                "8",
-                "9",
-                "10"
+                "Mitochondria",
+                "Lysosome",
+                "Endoplasmic reticulum",
+                "Ribosome"
             ],
-            "answer": "10"
+            "answer": "Ribosome",
+            "isMandatory": true
         },
         {
-            "id": 3,
-            "question": "What is 4 x 4?",
+            "question": "What is the name of the process by which plants convert light energy into chemical energy?",
             "options": [
-                "12",
-                "14",
-                "16",
-                "18"
+                "Photosynthesis",
+                "Cellular respiration",
+                "Fermentation",
+                "Glycolysis"
             ],
-            "answer": "16"
+            "answer": "Photosynthesis",
+            "isMandatory": false
         }
     ],
     "isActivated": true,
