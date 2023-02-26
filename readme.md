@@ -14,7 +14,7 @@ QUIZ API Developer Test
 
 Deployed on Heroku
 ========
-[Quiz API](https://quiz-api-test.herokuapp.com/quiz) is deployed on Heroku.
+[Quiz API](https://nodemysqlcrud.herokuapp.com/quiz) is deployed on Heroku.
 
 Quiz API
 ========
