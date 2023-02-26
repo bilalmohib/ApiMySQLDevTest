@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css"
+    />
     <title>QUIZ API Developer Test</title>
     <style>
       body {
@@ -68,10 +72,12 @@
       }
 
       pre {
-        background-color: #f0f0f0;
-        border: 1px solid #ccc;
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        font-family: "Courier New", Courier, monospace;
         font-size: 14px;
-        margin: 0 0 20px 0;
+        line-height: 1.5;
+        overflow-x: auto;
         padding: 10px;
         white-space: pre-wrap;
       }
@@ -158,10 +164,13 @@
       </ul>
 
       <h2 id="postmanlinktesting">Testing on Postman</h2>
-        <p>
-            You can test the Quiz API on
-            <a href="https://www.postman.com/lunar-space-683154/workspace/apitest/collection/26009791-bad2866e-05e2-4bf2-8ee3-ff1554025840?action=share&creator=26009791">Postman</a>.
-        </p>
+      <p>
+        You can test the Quiz API on
+        <a
+          href="https://www.postman.com/lunar-space-683154/workspace/apitest/collection/26009791-bad2866e-05e2-4bf2-8ee3-ff1554025840?action=share&creator=26009791"
+          >Postman</a
+        >.
+      </p>
 
       <h2 id="deployed-on-heroku">Deployed on Heroku</h2>
       <p>
@@ -181,7 +190,7 @@
         four options. and one of the options is the correct answer.
       </p>
       <p>Here is an example of a Quiz JSON object:</p>
-      <pre>
+      <pre class="hljs">
 
         {
             "id": 1,
@@ -217,37 +226,53 @@
             ]
         }
     </pre
+    class="hljs"
       >
 
       <h2 id="quiz-api-endpoints">Quiz API Endpoints</h2>
       <p>Quiz API has the following endpoints:</p>
       <ul>
-        <li>GET /quiz
-            <a href="https://nodemysqlcrud.herokuapp.com/quiz">https://nodemysqlcrud.herokuapp.com/quiz</a>
+        <li>
+          GET /quiz
+          <a href="https://nodemysqlcrud.herokuapp.com/quiz"
+            >https://nodemysqlcrud.herokuapp.com/quiz</a
+          >
         </li>
-        <li>POST /quiz
-            <a href="https://nodemysqlcrud.herokuapp.com/quiz">https://nodemysqlcrud.herokuapp.com/quiz</a>
+        <li>
+          POST /quiz
+          <a href="https://nodemysqlcrud.herokuapp.com/quiz"
+            >https://nodemysqlcrud.herokuapp.com/quiz</a
+          >
         </li>
-        <li>GET /quiz/:id
-            <a href="https://nodemysqlcrud.herokuapp.com/quiz/1">https://nodemysqlcrud.herokuapp.com/quiz/1</a>
+        <li>
+          GET /quiz/:id
+          <a href="https://nodemysqlcrud.herokuapp.com/quiz/1"
+            >https://nodemysqlcrud.herokuapp.com/quiz/1</a
+          >
         </li>
-        <li>PUT /quiz/:id
-            <a href="https://nodemysqlcrud.herokuapp.com/quiz/1">https://nodemysqlcrud.herokuapp.com/quiz/1</a>
+        <li>
+          PUT /quiz/:id
+          <a href="https://nodemysqlcrud.herokuapp.com/quiz/1"
+            >https://nodemysqlcrud.herokuapp.com/quiz/1</a
+          >
         </li>
-        <li>DELETE /quiz/:id
-            <a href="https://nodemysqlcrud.herokuapp.com/quiz/1">https://nodemysqlcrud.herokuapp.com/quiz/1</a>
-        </li>  
+        <li>
+          DELETE /quiz/:id
+          <a href="https://nodemysqlcrud.herokuapp.com/quiz/1"
+            >https://nodemysqlcrud.herokuapp.com/quiz/1</a
+          >
+        </li>
       </ul>
 
       <h2 id="get-quiz">GET /quiz</h2>
       <p>Get all quiz questions and answers.</p>
       <p>Example:</p>
-      <pre>
+      <pre class="hljs">
     GET /quiz
     </pre
       >
       <p>Response:</p>
-      <pre>
+      <pre class="hljs">
         [
         {
          "id": 1,
@@ -356,7 +381,8 @@
       <h2 id="post-quiz">POST /quiz</h2>
       <p>Create a new quiz question and answer.</p>
       <p>Example:</p>
-      <pre>
+      <pre class="hljs"
+      >
     POST /quiz
     {
         "title": "Geography Quiz",
@@ -391,7 +417,9 @@
     </pre
       >
       <p>Response:</p>
-      <pre>
+      <pre
+      class="hljs"
+      >
         {
             "error": false,
             "message": "Quiz added successfully!",
@@ -409,12 +437,16 @@
           >https://nodemysqlcrud.herokuapp.com/quiz/1</a
         >
       </p>
-      <pre>
+      <pre
+      class="hljs"
+      >
     GET /quiz/1
     </pre
       >
       <p>Response:</p>
-      <pre>
+      <pre
+      class="hljs"
+      >
     [
         {
             "id": 1,
@@ -532,15 +564,18 @@
     </div>
 
     <footer>
-      <p>Quiz API is developed by 
-        <a href="https://github.com/Muhammad-Bilal-7896/">
-            Muhammad Bilal
-        </a>
+      <p>
+        Quiz API is developed by
+        <a href="https://github.com/Muhammad-Bilal-7896/"> Muhammad Bilal </a>
       </p>
       <p>
         For any questions, please contact me at
         <a href="mailto:bilalmohib7896@gmail.com"> bilalmohib7896@gmail.com </a>
       </p>
     </footer>
+    <script>
+      hljs.highlightAll();
+    </script>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 </html>
