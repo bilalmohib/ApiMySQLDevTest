@@ -1,10 +1,24 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+
+const corsOptions = {
+  origin:[
+    "https://www.postman.com/lunar-space-683154/workspace/apitest/request/26009791-d814d4aa-fafc-4e50-afa5-96c45d977ae6",
+    "http://localhost:3000",
+    "https://nodemysqlcrud.herokuapp.com/",
+    "https://nodemysqlcrud.herokuapp.com/quiz"
+  ]
+};
+
 // create express app
 const app = express();
 // Setup server port
 const port = process.env.PORT || 3000;
 // Enable CORS
+
+app.use(cors(corsOptions));
+
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
