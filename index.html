@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUIZ API Developer Test</title>
+    <style>
+      .navbar {
+        background-color: #333;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px;
+      }
+
+      .navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+      }
+
+      .navbar li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      .navbar a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .navbar a:hover {
+        background-color: #fff;
+        color: #333;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #1e88e5;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        margin: 0 0 10px 0;
+      }
+
+      pre {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        margin: 0 0 20px 0;
+        padding: 10px;
+        white-space: pre-wrap;
+      }
+
+      ul {
+        list-style-type: disc;
+        margin: 0 0 20px 20px;
+        padding: 0;
+      }
+
+      li {
+        margin: 0 0 10px 0;
+      }
+
+      /* Style for the footer */
+      footer {
+        background-color: #f9f9f9;
+        color: #333;
+        font-size: 14px;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Style for links in the footer */
+      footer a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      /* Style for hover effect on links in the footer */
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="padding-left: 40px; padding-right: 40px">
+      <h1 style="margin-top: 100px">Quiz API</h1>
+      <p>
+        Quiz API is a REST API that stores quiz questions and answers in JSON
+        format.
+      </p>
+      <ul>
+        <li>One of the options is the correct answer.</li>
+        <li>
+          The user will select the correct answer and the app will check if the
+          answer is correct.
+        </li>
+        <li>
+          The Quiz JSON have a question property and options can be two, three
+          or four options. and one of the options is the correct answer.
+        </li>
+      </ul>
+
+      <h2>Quiz JSON</h2>
+      <p>Quiz JSON is a JSON object that stores quiz questions and answers.</p>
+      <p>One of the options is the correct answer.</p>
+      <p>
+        The user will select the correct answer and the app will check if the
+        answer is correct.
+      </p>
+      <p>
+        The Quiz JSON have a question property and options can be two, three or
+        four options. and one of the options is the correct answer.
+      </p>
+      <p>Here is an example of a Quiz JSON object:</p>
+      <pre>
+
+    {
+      "id": 1,
+      "title": "Exam 1",
+      "description": "This is the first exam.",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is the capital of France?",
+          "options": [
+            "Paris",
+            "London",
+            "Berlin",
+            "Rome"
+          ],
+          "answer": "Paris"
+        },
+        {
+          "id": 2,
+          "question": "What is the capital of Germany?",
+          "options": [
+            "Paris",
+            "London",
+            "Berlin",
+            "Rome"
+          ],
+          "answer": "Berlin"
+        }
+      ]
+    }
+    </pre
+      >
+
+      <h2>Quiz API Endpoints</h2>
+      <p>Quiz API has the following endpoints:</p>
+      <ul>
+        <li>GET /quiz</li>
+        <li>POST /quiz</li>
+        <li>GET /quiz/:id</li>
+        <li>PUT /quiz/:id</li>
+        <li>DELETE /quiz/:id</li>
+      </ul>
+
+      <h2>GET /quiz</h2>
+      <p>Get all quiz questions and answers.</p>
+      <p>Example:</p>
+      <pre>
+    GET /quiz
+    </pre
+      >
+      <p>Response:</p>
+      <pre>
+    [
+       {
+        "id": 1,
+        "title": "Exam 1",
+        "description": "This is the first exam.",
+        "questions": [
+            {
+            "id": 1,
+            "question": "What is the capital of France?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Paris"
+            },
+            {
+            "id": 2,
+            "question": "What is the capital of Germany?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Berlin"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Exam 2",
+        "description": "This is the second exam.",
+        "questions": [
+            {
+            "id": 1,
+            "question": "What is the capital of France?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Paris"
+            },
+            {
+            "id": 2,
+            "question": "What is the capital of Germany?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Berlin"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Exam 3",
+        "description": "This is the third exam.",
+        "questions": [
+            {
+            "id": 1,
+            "question": "What is the capital of France?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Paris"
+            },
+            {
+            "id": 2,
+            "question": "What is the capital of Germany?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Berlin"
+            }
+        ]
+    }
+    ]
+
+    </pre
+      >
+
+      <h2>POST /quiz</h2>
+      <p>Create a new quiz question and answer.</p>
+      <p>Example:</p>
+      <pre>
+    POST /quiz
+    {
+        "title": "Exam 4",
+        "description": "This is the fourth exam.",
+        "questions": [
+            {
+            "id": 1,
+            "question": "What is the capital of France?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Paris"
+            },
+            {
+            "id": 2,
+            "question": "What is the capital of Germany?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Berlin"
+            }
+        ]
+    }
+    </pre
+      >
+      <p>Response:</p>
+      <pre>
+    {
+        "id": 4,
+        "title": "Exam 4",
+        "description": "This is the fourth exam.",
+        "questions": [
+            {
+            "id": 1,
+            "question": "What is the capital of France?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Paris"
+            },
+            {
+            "id": 2,
+            "question": "What is the capital of Germany?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Berlin"
+            }
+        ]
+    }
+    </pre
+      >
+
+      <h2>GET /quiz/:id</h2>
+      <p>Get a quiz question and answer by id.</p>
+      <p>Example:</p>
+      <pre>
+    GET /quiz/1
+    </pre
+      >
+      <p>Response:</p>
+      <pre>
+        {
+            "id": 4,
+            "title": "Exam 4",
+            "description": "This is the fourth exam.",
+            "questions": [
+                {
+                "id": 1,
+                "question": "What is the capital of France?",
+                "options": [
+                    "Paris",
+                    "London",
+                    "Berlin",
+                    "Rome"
+                ],
+                "answer": "Paris"
+                },
+                {
+                "id": 2,
+                "question": "What is the capital of Germany?",
+                "options": [
+                    "Paris",
+                    "London",
+                    "Berlin",
+                    "Rome"
+                ],
+                "answer": "Berlin"
+                }
+            ]
+        }
+    </pre
+      >
+
+      <h2>PUT /quiz/:id</h2>
+      <p>Update a quiz question and answer by id.</p>
+      <p>Example:</p>
+      <pre>
+    PUT /quiz/1
+    {
+        "title": "Exam 1",
+        "description": "This is the first exam. Updated.",
+        "questions": [
+            {
+            "id": 1,
+            "question": "What is the capital of France?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Paris"
+            },
+            {
+            "id": 2,
+            "question": "What is the capital of Germany?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Berlin"
+            }
+        ]
+    }
+    </pre
+      >
+      <p>Response:</p>
+      <pre>
+        {
+            "title": "Exam 1",
+            "description": "This is the first exam. Updated.",
+            "questions": [
+                {
+                "id": 1,
+                "question": "What is the capital of France?",
+                "options": [
+                    "Paris",
+                    "London",
+                    "Berlin",
+                    "Rome"
+                ],
+                "answer": "Paris"
+                },
+                {
+                "id": 2,
+                "question": "What is the capital of Germany?",
+                "options": [
+                    "Paris",
+                    "London",
+                    "Berlin",
+                    "Rome"
+                ],
+                "answer": "Berlin"
+                }
+            ]
+        }
+    </pre
+      >
+
+      <h2>DELETE /quiz/:id</h2>
+      <p>Delete a quiz question and answer by id.</p>
+      <p>Example:</p>
+      <pre>
+    DELETE /quiz/1
+    </pre
+      >
+      <p>Response:</p>
+      <pre>
+      {
+        "message": "Quiz deleted successfully."
+      }
+    </pre
+      >
+
+      <h2>Quiz API Source Code</h2>
+      <p>Quiz API source code is available on GitHub:</p>
+      <p>
+        <a href="https://github.com/Muhammad-Bilal-7896/ApiMySQLDevTest">
+          Github Source Code
+        </a>
+      </p>
+
+      <h2>Quiz API Demo</h2>
+      <p>Quiz API demo is available on Heroku:</p>
+      <p>
+        <a href="https://quiz-api-mysql.herokuapp.com/"> Quiz API Demo </a>
+      </p>
+    </div>
+
+    <footer>
+      <p>Quiz API is developed by Muhammad Bilal</p>
+      <p>
+        For any questions, please contact me at
+        <a href="mailto:bilalmohib7896@gmail.com"> bilalmohib7896@gmail.com </a>
+      </p>
+    </footer>
+  </body>
+</html>
