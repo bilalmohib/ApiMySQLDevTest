@@ -2,14 +2,10 @@
 var dbConn = require("./../../config/db.config");
 //Quiz object create
 var Quiz = function (quiz) {
-  this.first_name = quiz.first_name;
-  this.last_name = quiz.last_name;
-  this.email = quiz.email;
-  this.phone = quiz.phone;
-  this.organization = quiz.organization;
-  this.designation = quiz.designation;
-  this.salary = quiz.salary;
-  this.status = quiz.status ? quiz.status : 1;
+  this.title = quiz.title;
+  this.description = quiz.description;
+  this.quizQuestions = quiz.quizQuestions;
+  this.isActivated = quiz.isActivated;
   this.created_at = new Date();
   this.updated_at = new Date();
 };
@@ -51,15 +47,14 @@ Quiz.findAll = function (result) {
 };
 Quiz.update = function (id, quiz, result) {
   dbConn.query(
-    "UPDATE quiz SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?",
+    "UPDATE quiz SET title=?,description=?,quizQuestions=?,isActivated=?,created_at=?,updated_at=? WHERE id = ?",
     [
-      quiz.first_name,
-      quiz.last_name,
-      quiz.email,
-      quiz.phone,
-      quiz.organization,
-      quiz.designation,
-      quiz.salary,
+      quiz.title,
+      quiz.description,
+      quiz.quizQuestions,
+      quiz.isActivated,
+      quiz.created_at,
+      new Date(),
       id,
     ],
     function (err, res) {
