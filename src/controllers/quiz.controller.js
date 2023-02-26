@@ -49,7 +49,7 @@ exports.update = function (req, res) {
   }
 };
 exports.delete = function (req, res) {
-  quiz.delete(req.params.id, function (err, quiz) {
+  Quiz.delete(req.params.id, function (err, quiz) {
     if (err) res.send(err);
     res.json({ error: false, message: "Quiz successfully deleted" });
   });

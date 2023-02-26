@@ -38,11 +38,15 @@ The Quiz JSON have a question property and options can be two, three or four opt
 
 Here is an example of a Quiz JSON object:
 
-    {
+     {
       "id": 1,
       "title": "Exam 1",
       "description": "This is the first exam.",
-      "questions": [
+      "isActivated": true,
+      "created_at": "2020-05-01T00:00:00.000Z",
+      "updated_at": "2020-05-01T00:00:00.000Z",
+      "created_by": "admin",
+      "quizQuestions": [
         {
           "id": 1,
           "question": "What is the capital of France?",
@@ -65,7 +69,7 @@ Here is an example of a Quiz JSON object:
           ],
           "answer": "Berlin"
         }
-      \]
+      ]
     }
     
 
@@ -91,12 +95,16 @@ Example:
     
 ```json
 Response:
-    [
+        [
        {
         "id": 1,
         "title": "Exam 1",
         "description": "This is the first exam.",
-        "questions": [
+        "isActivated": true,
+        "created_at": "2020-05-01T00:00:00.000Z",
+        "updated_at": null,
+        "created_by": "admin",
+        "quizQuestions": [
             {
             "id": 1,
             "question": "What is the capital of France?",
@@ -125,7 +133,11 @@ Response:
         "id": 2,
         "title": "Exam 2",
         "description": "This is the second exam.",
-        "questions": [
+        "isActivated": true,
+        "created_at": "2020-05-01T00:00:00.000Z",
+        "updated_at": null,
+        "created_by": "admin",
+        "quizQuestions": [
             {
             "id": 1,
             "question": "What is the capital of France?",
@@ -154,7 +166,11 @@ Response:
         "id": 3,
         "title": "Exam 3",
         "description": "This is the third exam.",
-        "questions": [
+        "isActivated": true,
+        "created_at": "2020-05-01T00:00:00.000Z",
+        "updated_at": null,
+        "created_by": "admin",
+        "quizQuestions": [
             {
             "id": 1,
             "question": "What is the capital of France?",
@@ -163,7 +179,7 @@ Response:
                 "London",
                 "Berlin",
                 "Rome"
-            \],
+            ],
             "answer": "Paris"
             },
             {
@@ -190,68 +206,49 @@ Create a new quiz question and answer.
 
 Example:
 
-    POST /quiz
+POST /quiz
+
+```JSON
     {
-        "title": "Exam 4",
-        "description": "This is the fourth exam.",
-        "questions": [
+        "title": "Geography Quiz",
+        "description": "Test your knowledge of world geography!",
+        "isActivated": true,
+        "created_by": "admin",
+        "quizQuestions": [
             {
-            "id": 1,
-            "question": "What is the capital of France?",
-            "options": \[
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            \],
-            "answer": "Paris"
+                "id": 1,
+                "question": "What is the only continent that lies entirely within the Eastern Hemisphere?",
+                "options": [
+                    "Africa",
+                    "Asia",
+                    "Australia",
+                    "Antarctica"
+                ],
+                "answer": "Australia"
             },
             {
-            "id": 2,
-            "question": "What is the capital of Germany?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Berlin"
+                "id": 2,
+                "question": "Which two countries in South America do not share a border with Brazil?",
+                "options": [
+                    "Chile and Argentina",
+                    "Colombia and Ecuador",
+                    "Peru and Bolivia",
+                    "Uruguay and Paraguay"
+                ],
+                "answer": "Chile and Argentina"
             }
         ]
     }
-    
+```
 
 Response:
-
+```JSON
     {
-        "id": 4,
-        "title": "Exam 4",
-        "description": "This is the fourth exam.",
-        "questions": [
-            {
-            "id": 1,
-            "question": "What is the capital of France?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Paris"
-            },
-            {
-            "id": 2,
-            "question": "What is the capital of Germany?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Berlin"
-            }
-        ]
+        "error": false,
+        "message": "Quiz added successfully!",
+        "data": 1
     }
+```
     
 
 GET /quiz/:id
@@ -265,37 +262,20 @@ Example:
     
 
 Response:
-
-        {
-            "id": 4,
-            "title": "Exam 4",
-            "description": "This is the fourth exam.",
-            "questions": [
-                {
-                "id": 1,
-                "question": "What is the capital of France?",
-                "options": [
-                    "Paris",
-                    "London",
-                    "Berlin",
-                    "Rome"
-                ],
-                "answer": "Paris"
-                },
-                {
-                "id": 2,
-                "question": "What is the capital of Germany?",
-                "options": [
-                    "Paris",
-                    "London",
-                    "Berlin",
-                    "Rome"
-                ],
-                "answer": "Berlin"
-                }
-            ]
-        }
-    
+```JSON
+[
+    {
+        "id": 1,
+        "title": "Exam 4",
+        "description": "This is the fourth exam.",
+        "quizQuestions": "[{\"id\": 1, \"answer\": \"Paris\", \"options\": [\"Paris\", \"London\", \"Berlin\", \"Rome\"], \"question\": \"What is the capital of France?\"}, {\"id\": 2, \"answer\": \"Berlin\", \"options\": [\"Paris\", \"London\", \"Berlin\", \"Rome\"], \"question\": \"What is the capital of Germany?\"}]",
+        "isActivated": 1,
+        "created_at": "2023-02-26T11:27:20.000Z",
+        "updated_at": "2023-02-26T11:27:20.000Z",
+        "created_by": "admin"
+    }
+]
+```
 
 PUT /quiz/:id
 -------------
@@ -304,71 +284,25 @@ Update a quiz question and answer by id.
 
 Example:
 
-    PUT /quiz/1
-    {
-        "title": "Exam 1",
-        "description": "This is the first exam. Updated.",
-        "questions": [
-            {
-            "id": 1,
-            "question": "What is the capital of France?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome",
-                "Madrid",
-                "Rome",
-                "Copenhagen",
-                "Amsterdam"
-            ],
-            "answer": "Paris"
-            },
-            {
-            "id": 2,
-            "question": "What is the capital of Germany?",
-            "options": [
-                "Paris",
-                "London",
-                "Berlin",
-                "Rome"
-            ],
-            "answer": "Berlin"
-            }
-        ]
-    }
+PUT /quiz/1
+```JSON
+{
+    "title": "This is the first question. Again updated",
+    "description": "This is the fourth exam.",
+    "quizQuestions": "[{\"id\": 1, \"answer\": \"Paris\", \"options\": [\"Paris\", \"London\", \"Berlin\", \"Rome\"], \"question\": \"What is the capital of France?\"}, {\"id\": 2, \"answer\": \"Berlin\", \"options\": [\"Paris\", \"London\", \"Berlin\", \"Rome\"], \"question\": \"What is the capital of Germany?\"}]",
+    "isActivated": 1,
+    "created_by": "admin"
+}
+```   
     
 
 Response:
-
-        {
-            "title": "Exam 1",
-            "description": "This is the first exam. Updated.",
-            "questions": [
-                {
-                "id": 1,
-                "question": "What is the capital of France?",
-                "options": [
-                    "Paris",
-                    "London",
-                    "Berlin",
-                    "Rome"
-                ],
-                "answer": "Paris"
-                },
-                {
-                "id": 2,
-                "question": "What is the capital of Germany?",
-                "options": [
-                    "Paris",
-                    "London",
-                    "Berlin",
-                    "Rome"
-                ],
-                "answer": "Berlin"
-                }
-            ]
-        }
+```JSON
+{
+    "error": false,
+    "message": "Quiz successfully updated"
+}
+``` 
     
 
 DELETE /quiz/:id
