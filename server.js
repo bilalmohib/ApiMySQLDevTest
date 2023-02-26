@@ -19,10 +19,10 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 // Require employee routes
-const employeeRoutes = require("./src/routes/employee.routes");
+const quizRoutes = require("./src/routes/quiz.routes");
 // using as middleware
-app.use('/api/v1/employees', employeeRoutes);
+app.use('/quiz', quizRoutes);
 // listen for requests
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+  console.log(`Quiz API started. Server is listening on port ${port}`);
 });
