@@ -113,15 +113,32 @@
   <body>
     <nav class="navbar">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#quiz-api">Quiz API</a></li>
+        <li><a href="#quiz-json">Quiz JSON</a></li>
+        <li><a href="#quiz-api-endpoints">Quiz API Endpoints</a></li>
+        <li><a href="#get-quiz">GET /quiz</a></li>
+        <li><a href="#post-quiz">POST /quiz</a></li>
+        <li><a href="#get-quiz-id">GET /quiz/:id</a></li>
+        <li><a href="#put-quiz-id">PUT /quiz/:id</a></li>
+        <li><a href="#delete-quiz-id">DELETE /quiz/:id</a></li>
+        <li><a href="#get-quiz-id-question">GET /quiz/:id/question</a></li>
+        <li><a href="#post-quiz-id-question">POST /quiz/:id/question</a></li>
+        <li>
+          <a href="#get-quiz-id-question-id">GET /quiz/:id/question/:id</a>
+        </li>
+        <li>
+          <a href="#put-quiz-id-question-id">PUT /quiz/:id/question/:id</a>
+        </li>
+        <li>
+          <a href="#delete-quiz-id-question-id"
+            >DELETE /quiz/:id/question/:id</a
+          >
+        </li>
       </ul>
     </nav>
 
     <div style="padding-left: 40px; padding-right: 40px">
-      <h1 style="margin-top: 100px">Quiz API</h1>
+      <h1 id="quiz-api" style="margin-top: 100px">Quiz API</h1>
       <p>
         Quiz API is a REST API that stores quiz questions and answers in JSON
         format.
@@ -138,7 +155,7 @@
         </li>
       </ul>
 
-      <h2>Quiz JSON</h2>
+      <h2 id="quiz-json">Quiz JSON</h2>
       <p>Quiz JSON is a JSON object that stores quiz questions and answers.</p>
       <p>One of the options is the correct answer.</p>
       <p>
@@ -184,7 +201,7 @@
     </pre
       >
 
-      <h2>Quiz API Endpoints</h2>
+      <h2 id="quiz-api-endpoints">Quiz API Endpoints</h2>
       <p>Quiz API has the following endpoints:</p>
       <ul>
         <li>GET /quiz</li>
@@ -194,7 +211,7 @@
         <li>DELETE /quiz/:id</li>
       </ul>
 
-      <h2>GET /quiz</h2>
+      <h2 id="get-quiz">GET /quiz</h2>
       <p>Get all quiz questions and answers.</p>
       <p>Example:</p>
       <pre>
@@ -296,7 +313,7 @@
     </pre
       >
 
-      <h2>POST /quiz</h2>
+      <h2 id="post-quiz">POST /quiz</h2>
       <p>Create a new quiz question and answer.</p>
       <p>Example:</p>
       <pre>
@@ -365,7 +382,7 @@
     </pre
       >
 
-      <h2>GET /quiz/:id</h2>
+      <h2 id="get-quiz-id">GET /quiz/:id</h2>
       <p>Get a quiz question and answer by id.</p>
       <p>Example:</p>
       <pre>
@@ -406,7 +423,7 @@
     </pre
       >
 
-      <h2>PUT /quiz/:id</h2>
+      <h2 id="put-quiz-id">PUT /quiz/:id</h2>
       <p>Update a quiz question and answer by id.</p>
       <p>Example:</p>
       <pre>
@@ -474,7 +491,7 @@
     </pre
       >
 
-      <h2>DELETE /quiz/:id</h2>
+      <h2 id="delete-quiz-id">DELETE /quiz/:id</h2>
       <p>Delete a quiz question and answer by id.</p>
       <p>Example:</p>
       <pre>
