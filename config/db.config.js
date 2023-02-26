@@ -5,10 +5,10 @@ const app = express();
 
 //local mysql db connection
 const dbConn = mysql.createConnection({
-  host     : 'eu-cdbr-west-03.cleardb.net',
-  user     : 'b0a1accfa0decf',
-  password : '3edef4cd',
-  database : 'heroku_624aae288a3b296'
+  host     : 'lmc8ixkebgaq22lo.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
+  user     : 'ots7phneds8mm7l6',
+  password : 'ni6xf7pslhbpxp1y',
+  database : 'kzz7jkira143zh0d'
 });
 
 dbConn.connect(function(err) {
