@@ -8,7 +8,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css"
     />
-    <title>QUIZ API Developer Test</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -17,6 +31,7 @@
         margin: 0;
         padding: 0;
       }
+
       .navbar {
         background-color: #333;
         width: 100%;
@@ -51,6 +66,7 @@
         background-color: #fff;
         color: #333;
       }
+
       header {
         background-color: #1e88e5;
         color: #fff;
@@ -80,6 +96,8 @@
         overflow-x: auto;
         padding: 10px;
         white-space: pre-wrap;
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       }
 
       ul {
@@ -115,6 +133,7 @@
         text-decoration: underline;
       }
     </style>
+    <title>QUIZ API Developer Test</title>
   </head>
   <body>
     <nav class="navbar">
@@ -129,23 +148,10 @@
         <li><a href="#get-quiz-id">GET /quiz/:id</a></li>
         <li><a href="#put-quiz-id">PUT /quiz/:id</a></li>
         <li><a href="#delete-quiz-id">DELETE /quiz/:id</a></li>
-        <li><a href="#get-quiz-id-question">GET /quiz/:id/question</a></li>
-        <li><a href="#post-quiz-id-question">POST /quiz/:id/question</a></li>
-        <li>
-          <a href="#get-quiz-id-question-id">GET /quiz/:id/question/:id</a>
-        </li>
-        <li>
-          <a href="#put-quiz-id-question-id">PUT /quiz/:id/question/:id</a>
-        </li>
-        <li>
-          <a href="#delete-quiz-id-question-id"
-            >DELETE /quiz/:id/question/:id</a
-          >
-        </li>
       </ul>
     </nav>
 
-    <div style="padding-left: 40px; padding-right: 40px; margin-top: 150px">
+    <div style="padding-left: 40px; padding-right: 40px; margin-top: 100px">
       <h1 id="quiz-api">Quiz API</h1>
       <p>
         Quiz API is a REST API that stores quiz questions and answers in JSON
@@ -190,8 +196,8 @@
         four options. and one of the options is the correct answer.
       </p>
       <p>Here is an example of a Quiz JSON object:</p>
-      <pre class="hljs">
-
+      <pre class="hljs language-json">
+        <code class="json">
         {
             "id": 1,
             "title": "Exam 1",
@@ -225,9 +231,8 @@
                 }
             ]
         }
-    </pre
-    class="hljs"
-      >
+        </code>
+    </pre>
 
       <h2 id="quiz-api-endpoints">Quiz API Endpoints</h2>
       <p>Quiz API has the following endpoints:</p>
@@ -272,7 +277,8 @@
     </pre
       >
       <p>Response:</p>
-      <pre class="hljs">
+      <pre class="hljs language-json">
+        <code class="json">
         [
         {
          "id": 1,
@@ -374,15 +380,14 @@
          ]
      }
  ]
-
-    </pre
-      >
+ </code>
+    </pre>
 
       <h2 id="post-quiz">POST /quiz</h2>
       <p>Create a new quiz question and answer.</p>
       <p>Example:</p>
-      <pre class="hljs"
-      >
+      <pre class="hljs">
+        <code class="json">
     POST /quiz
     {
         "title": "Geography Quiz",
@@ -414,19 +419,18 @@
             }
         ]
     }
-    </pre
-      >
+    </code>
+    </pre>
       <p>Response:</p>
-      <pre
-      class="hljs"
-      >
+      <pre class="hljs">
+        <code class="json">
         {
             "error": false,
             "message": "Quiz added successfully!",
             "data": 1
         }
-    </pre
-      >
+        </code>
+    </pre>
 
       <h2 id="get-quiz-id">GET /quiz/:id</h2>
       <p>Get a quiz question and answer by id.</p>
@@ -437,16 +441,13 @@
           >https://nodemysqlcrud.herokuapp.com/quiz/1</a
         >
       </p>
-      <pre
-      class="hljs"
-      >
+      <pre class="hljs">
     GET /quiz/1
     </pre
       >
       <p>Response:</p>
-      <pre
-      class="hljs"
-      >
+      <pre class="hljs">
+      <code class="json">
     [
         {
             "id": 1,
@@ -459,8 +460,8 @@
             "created_by": "admin"
         }
     ]
-    </pre
-      >
+    </code>
+    </pre>
 
       <h2 id="put-quiz-id">PUT /quiz/:id</h2>
       <p>Update a quiz question and answer by id.</p>
@@ -473,6 +474,7 @@
       </p>
       <p><b>Body:</b></p>
       <pre>
+        <code class="json">
     PUT /quiz/1
     {
         "title": "Updated Math Quiz",
@@ -515,16 +517,17 @@
         "isActivated": true,
         "created_by": "admin"
     }
-    </pre
-      >
+        </code>
+    </pre>
       <p>Response:</p>
       <pre>
+        <code class="json">
         {
             "error": false,
             "message": "Quiz successfully updated"
         }
-    </pre
-      >
+        </code>
+    </pre>
 
       <h2 id="delete-quiz-id">DELETE /quiz/:id</h2>
       <p>Delete a quiz question and answer by id.</p>
@@ -541,12 +544,13 @@
       >
       <p>Response:</p>
       <pre>
+        <code class="json">
         {
             "error": false,
             "message": "Quiz successfully deleted"
         }
-    </pre
-      >
+        </code>
+    </pre>
 
       <h2>Quiz API Source Code</h2>
       <p>Quiz API source code is available on GitHub:</p>
@@ -573,9 +577,14 @@
         <a href="mailto:bilalmohib7896@gmail.com"> bilalmohib7896@gmail.com </a>
       </p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
     <script>
       hljs.highlightAll();
     </script>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+  <!-- MDB -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+  ></script>
 </html>
