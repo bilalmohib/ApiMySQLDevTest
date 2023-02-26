@@ -4,13 +4,14 @@ QUIZ API Developer Test
 - [Quiz API](#quiz-api)
   - [Quiz JSON](#quiz-json)
   - [Quiz API Endpoints](#quiz-api-endpoints)
+  - [Testing the API](#testing-the-api)
   - [GET /quiz](#get-quiz)
   - [POST /quiz](#post-quiz)
   - [GET /quiz/:id](#get-quizid)
-  - [PUT /quiz/:id](#put-quizid)
-  - [DELETE /quiz/:id](#delete-quizid)
-  - [Quiz API Source Code](#quiz-api-source-code)
-  - [Quiz API Demo](#quiz-api-demo)
+  - [**PUT /quiz/:id**](#put-quizid)
+  - [**DELETE /quiz/:id**](#delete-quizid)
+  - [**Quiz API Source Code**](#quiz-api-source-code)
+  - [**Quiz API Demo**](#quiz-api-demo)
 
 Deployed on Heroku
 ========
@@ -78,11 +79,20 @@ Quiz API Endpoints
 
 Quiz API has the following endpoints:
 
-*   GET /quiz
+*   GET /quiz , 
+    URL: [https://nodemysqlcrud.herokuapp.com/quiz](https://nodemysqlcrud.herokuapp.com/quiz)
 *   POST /quiz
+    URL: [https://nodemysqlcrud.herokuapp.com/quiz](https://nodemysqlcrud.herokuapp.com/quiz)
 *   GET /quiz/:id
+    URL: [https://nodemysqlcrud.herokuapp.com/quiz/:id](https://nodemysqlcrud.herokuapp.com/quiz/:id)
 *   PUT /quiz/:id
+    URL: [https://nodemysqlcrud.herokuapp.com/quiz/:id](https://nodemysqlcrud.herokuapp.com/quiz/:id)
 *   DELETE /quiz/:id
+    URL: [https://nodemysqlcrud.herokuapp.com/quiz/:id](https://nodemysqlcrud.herokuapp.com/quiz/:id)
+
+Testing the API
+----------------
+If you want to test the API endpoints, you can use [Postman](https://www.postman.com/lunar-space-683154/workspace/apitest/collection/26009791-bad2866e-05e2-4bf2-8ee3-ff1554025840?action=share&creator=26009791).
 
 GET /quiz
 ---------
@@ -208,6 +218,7 @@ Example:
 
 POST /quiz
 
+**Body:**
 ```JSON
     {
         "title": "Geography Quiz",
@@ -258,15 +269,15 @@ Get a quiz question and answer by id.
 
 Example:
 
-    GET /quiz/1
+**GET /quiz/1**
 
-    URL Params:
-    id = 1
+**URL Params:**
+id = 1
 
-    URL Just for testing:
-            [https://nodemysqlcrud.herokuapp.com/quiz/1](https://nodemysqlcrud.herokuapp.com/quiz/1)
+**URL Just for testing:**
+[https://nodemysqlcrud.herokuapp.com/quiz/1](https://nodemysqlcrud.herokuapp.com/quiz/1)
 
-Response:
+**Response:**
 ```JSON
 [
     {
@@ -282,17 +293,17 @@ Response:
 ]
 ```
 
-PUT /quiz/:id
+**PUT /quiz/:id**
 -------------
 
 Update a quiz question and answer by id.
 
 Example:
 
-URL Just be like this:
-https://nodemysqlcrud.herokuapp.com/quiz/3
+**URL Just be like this:**
+[https://nodemysqlcrud.herokuapp.com/quiz/3](https://nodemysqlcrud.herokuapp.com/quiz/3)
 
-Body:
+**Body:**
 ```json
 {
     "title": "Updated Math Quiz",
@@ -335,18 +346,9 @@ Body:
     "isActivated": true,
     "created_by": "admin"
 }
-```
+``` 
 
-PUT /quiz/1
-```JSON
-{
-    "error": false,
-    "message": "Quiz successfully updated"
-}
-```   
-    
-
-Response:
+**Response:**
 ```JSON
 {
     "error": false,
@@ -355,22 +357,23 @@ Response:
 ``` 
     
 
-DELETE /quiz/:id
+**DELETE /quiz/:id**
 ----------------
 
 Delete a quiz question and answer by id.
 
 Example:
 
-DELETE /quiz/1
+**DELETE /quiz/1**
 
-Parameters:
+**Parameters:**
 
   * id: Quiz id
 
-URL Just like this : https://nodemysqlcrud.herokuapp.com/quiz/3
+**URL Just like this**
+[https://nodemysqlcrud.herokuapp.com/quiz/3](https://nodemysqlcrud.herokuapp.com/quiz/3)
 
-Response:
+**Response:**
 ```JSON
   {
     "error": false,
@@ -378,19 +381,19 @@ Response:
   }
 ```
 
-Quiz API Source Code
+**Quiz API Source Code**
 --------------------
 
 Quiz API source code is available on GitHub:
 
 [Github Source Code](https://github.com/Muhammad-Bilal-7896/ApiMySQLDevTest)
 
-Quiz API Demo
+**Quiz API Demo**
 -------------
 
 Quiz API demo is available on Heroku:
 
-[Quiz API Demo](https://quiz-api-mysql.herokuapp.com/)
+[Quiz API Demo](https://nodemysqlcrud.herokuapp.com)
 
 Quiz API is developed by Muhammad Bilal
 
