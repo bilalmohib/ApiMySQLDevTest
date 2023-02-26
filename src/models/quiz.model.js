@@ -6,6 +6,7 @@ var Quiz = function (quiz) {
   this.description = quiz.description;
   this.quizQuestions = quiz.quizQuestions;
   this.isActivated = quiz.isActivated;
+  this.created_by = quiz.created_by;
   this.created_at = new Date();
   this.updated_at = new Date();
 };
@@ -47,12 +48,13 @@ Quiz.findAll = function (result) {
 };
 Quiz.update = function (id, quiz, result) {
   dbConn.query(
-    "UPDATE quiz SET title=?,description=?,quizQuestions=?,isActivated=?,created_at=?,updated_at=? WHERE id = ?",
+    "UPDATE quiz SET title=?,description=?,quizQuestions=?,isActivated=?,created_by=?,created_at=?,updated_at=? WHERE id = ?",
     [
       quiz.title,
       quiz.description,
       quiz.quizQuestions,
       quiz.isActivated,
+      quiz.created_by,
       quiz.created_at,
       new Date(),
       id,
