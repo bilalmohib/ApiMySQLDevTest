@@ -10,6 +10,7 @@ class Quiz {
     this.quizQuestions = quiz.quizQuestions;
     this.isActivated = quiz.isActivated;
     this.created_by = quiz.created_by;
+    this.rating = quiz.rating;
     this.created_at = new Date();
     this.updated_at = new Date();
   }
@@ -21,6 +22,7 @@ class Quiz {
       description: newQuiz.description,
       quizQuestions: JSON.stringify(newQuiz.quizQuestions),
       isActivated: newQuiz.isActivated,
+      rating: newQuiz.rating,
       created_by: newQuiz.created_by,
       created_at: newQuiz.created_at,
       updated_at: newQuiz.updated_at,
@@ -65,6 +67,7 @@ Quiz.update = function (id, quiz, result) {
       quiz.description,
       JSON.stringify(quiz.quizQuestions),
       quiz.isActivated,
+      quiz.rating,
       quiz.created_by,
       new Date(),
       id,
