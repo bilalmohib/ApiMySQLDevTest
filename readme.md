@@ -43,6 +43,7 @@ Here is an example of a Quiz JSON object:
         "id": 1,
         "title": "Exam 1",
         "description": "This is the first exam.",
+        "rating": 5,
         "isActivated": true,
         "created_at": "2020-05-01T00:00:00.000Z",
         "updated_at": null,
@@ -111,6 +112,7 @@ Response:
     {
         "id": 1,
         "title": "Biology Quiz",
+        "rating": 3,
         "description": "Test your knowledge of biology!",
         "quizQuestions": "[{\"answer\": \"Cellular respiration\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the process by which cells convert glucose into ATP?\", \"isMandatory\": true}, {\"answer\": \"Ribosome\", \"options\": [\"Mitochondria\", \"Lysosome\", \"Endoplasmic reticulum\", \"Ribosome\"], \"question\": \"What is the name of the organelle responsible for protein synthesis?\", \"isMandatory\": true}, {\"answer\": \"Photosynthesis\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the name of the process by which plants convert light energy into chemical energy?\", \"isMandatory\": true}]",
         "isActivated": 1,
@@ -121,6 +123,7 @@ Response:
     {
         "id": 2,
         "title": "Astronomy Quiz",
+        "rating": 4,
         "description": "Test your knowledge of astronomy!",
         "quizQuestions": "[{\"answer\": \"Proxima Centauri\", \"options\": [\"Alpha Centauri\", \"Betelgeuse\", \"Sirius\", \"Proxima Centauri\"], \"question\": \"What is the closest star to our solar system?\", \"isMandatory\": true}, {\"answer\": \"Ganymede\", \"options\": [\"Ganymede\", \"Europa\", \"Callisto\", \"Titan\"], \"question\": \"What is the name of the largest moon in our solar system?\", \"isMandatory\": true}, {\"answer\": \"Canis Major Dwarf\", \"options\": [\"Andromeda\", \"Canis Major Dwarf\", \"Triangulum\", \"Large Magellanic Cloud\"], \"question\": \"What is the name of the nearest galaxy to our Milky Way?\", \"isMandatory\": true}]",
         "isActivated": 1,
@@ -131,6 +134,7 @@ Response:
     {
         "id": 3,
         "title": "Programming Quiz",
+        "rating": 5,
         "description": "Test your knowledge of programming!",
         "quizQuestions": "[{\"answer\": \"13\", \"options\": [\"25\", \"13\", \"17\", \"None of the above\"], \"question\": \"What is the output of the following code: print(3 + 2 * 5)\", \"isMandatory\": true}, {\"answer\": \"def\", \"options\": [\"define\", \"function\", \"def\", \"define_function\"], \"question\": \"What is the keyword used in Python to define a function?\", \"isMandatory\": true}, {\"answer\": \"To create a new object of a class\", \"options\": [\"To create a new object of a class\", \"To define an instance method of a class\", \"To provide a way to access private variables\", \"To implement inheritance\"], \"question\": \"What is the purpose of a constructor in object-oriented programming?\", \"isMandatory\": true}]",
         "isActivated": 1,
@@ -141,6 +145,7 @@ Response:
     {
         "id": 4,
         "title": "Random Knowledge Quiz",
+        "rating": 5,
         "description": "Test your general knowledge with these difficult questions!",
         "quizQuestions": "[{\"answer\": \"Skin\", \"options\": [\"Heart\", \"Brain\", \"Skin\", \"Liver\"], \"question\": \"What is the largest organ in the human body?\", \"isMandatory\": true}, {\"answer\": \"Vatican City\", \"options\": [\"Monaco\", \"Nauru\", \"Vatican City\", \"San Marino\"], \"question\": \"What is the smallest country in the world by land area?\", \"isMandatory\": true}, {\"answer\": \"O3\", \"options\": [\"O\", \"O2\", \"O3\", \"O4\"], \"question\": \"What is the chemical formula for ozone?\", \"isMandatory\": true}, {\"answer\": \"Mariana Trench\", \"options\": [\"Mariana Trench\", \"Puerto Rico Trench\", \"Java Trench\", \"Kermadec Trench\"], \"question\": \"What is the name of the deepest part of the ocean?\", \"isMandatory\": true}, {\"answer\": \"Antarctic\", \"options\": [\"Sahara\", \"Arabian\", \"Antarctic\", \"Gobi\"], \"question\": \"What is the largest desert in the world?\", \"isMandatory\": true}]",
         "isActivated": 1,
@@ -166,6 +171,7 @@ POST /quiz
     {
     "title": "Random Knowledge Quiz",
     "description": "Test your general knowledge with these difficult questions!",
+    "rating": 4,
     "quizQuestions": [
         {
             "question": "What is the largest organ in the human body?",
@@ -259,6 +265,7 @@ id = 1
     {
         "id": 1,
         "title": "Biology Quiz",
+        "rating": 4,
         "description": "Test your knowledge of biology!",
         "quizQuestions": "[{\"answer\": \"Cellular respiration\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the process by which cells convert glucose into ATP?\", \"isMandatory\": true}, {\"answer\": \"Ribosome\", \"options\": [\"Mitochondria\", \"Lysosome\", \"Endoplasmic reticulum\", \"Ribosome\"], \"question\": \"What is the name of the organelle responsible for protein synthesis?\", \"isMandatory\": true}, {\"answer\": \"Photosynthesis\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the name of the process by which plants convert light energy into chemical energy?\", \"isMandatory\": true}]",
         "isActivated": 1,
@@ -284,6 +291,7 @@ Example:
 {
     "title": "Biology Quiz Updated",
     "description": "Test your knowledge of biology! Now Updated Will appear",
+    "rating": 4,
     "quizQuestions": [
         {
             "question": "What is the process by which cells convert glucose into ATP?",

@@ -355,6 +355,7 @@
         {
          "id": 1,
          "title": "Exam 1",
+         "rating": 4.5,
          "description": "This is the first exam.",
          "isActivated": true,
          "created_at": "2020-05-01T00:00:00.000Z",
@@ -390,6 +391,7 @@
      {
          "id": 2,
          "title": "Exam 2",
+         "rating": 5,
          "description": "This is the second exam.",
          "isActivated": true,
          "created_at": "2020-05-01T00:00:00.000Z",
@@ -425,6 +427,7 @@
      {
          "id": 3,
          "title": "Exam 3",
+         "rating": 3.5,
          "description": "This is the third exam.",
          "isActivated": true,
          "created_at": "2020-05-01T00:00:00.000Z",
@@ -470,6 +473,7 @@
     {
         "title": "Geography Quiz",
         "description": "Test your knowledge of world geography!",
+        "rating": 4,
         "isActivated": true,
         "created_by": "admin",
         "quizQuestions": [
@@ -532,6 +536,7 @@
         {
             "id": 1,
             "title": "Biology Quiz",
+            "rating": 4,
             "description": "Test your knowledge of biology!",
             "quizQuestions": "[{\"answer\": \"Cellular respiration\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the process by which cells convert glucose into ATP?\", \"isMandatory\": true}, {\"answer\": \"Ribosome\", \"options\": [\"Mitochondria\", \"Lysosome\", \"Endoplasmic reticulum\", \"Ribosome\"], \"question\": \"What is the name of the organelle responsible for protein synthesis?\", \"isMandatory\": true}, {\"answer\": \"Photosynthesis\", \"options\": [\"Photosynthesis\", \"Cellular respiration\", \"Fermentation\", \"Glycolysis\"], \"question\": \"What is the name of the process by which plants convert light energy into chemical energy?\", \"isMandatory\": true}]",
             "isActivated": 1,
@@ -558,6 +563,7 @@
     PUT /quiz/1
     {
       "title": "Biology Quiz Updated",
+      "rating": 3,
       "description": "Test your knowledge of biology! Now Updated Will appear",
       "quizQuestions": [
           {
