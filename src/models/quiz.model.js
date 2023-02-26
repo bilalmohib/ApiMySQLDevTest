@@ -59,14 +59,13 @@ Quiz.findAll = function (result) {
 };
 Quiz.update = function (id, quiz, result) {
   dbConn.query(
-    "UPDATE quiz SET title=?,description=?,quizQuestions=?,isActivated=?,created_by=?,created_at=?,updated_at=? WHERE id = ?",
+    "UPDATE quiz SET title=?, description=?, quizQuestions=?, isActivated=?, created_by=?, updated_at=? WHERE id=?",
     [
       quiz.title,
       quiz.description,
-      quiz.quizQuestions,
+      JSON.stringify(quiz.quizQuestions),
       quiz.isActivated,
       quiz.created_by,
-      quiz.created_at,
       new Date(),
       id,
     ],
@@ -80,6 +79,7 @@ Quiz.update = function (id, quiz, result) {
     }
   );
 };
+
 Quiz.delete = function (id, result) {
   dbConn.query("DELETE FROM quiz WHERE id = ?", [id], function (err, res) {
     if (err) {
