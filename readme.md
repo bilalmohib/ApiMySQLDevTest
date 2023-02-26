@@ -39,37 +39,37 @@ The Quiz JSON have a question property and options can be two, three or four opt
 Here is an example of a Quiz JSON object:
 
      {
-      "id": 1,
-      "title": "Exam 1",
-      "description": "This is the first exam.",
-      "isActivated": true,
-      "created_at": "2020-05-01T00:00:00.000Z",
-      "updated_at": "2020-05-01T00:00:00.000Z",
-      "created_by": "admin",
-      "quizQuestions": [
-        {
-          "id": 1,
-          "question": "What is the capital of France?",
-          "options": [
-            "Paris",
-            "London",
-            "Berlin",
-            "Rome"
-          ],
-          "answer": "Paris"
-        },
-        {
-          "id": 2,
-          "question": "What is the capital of Germany?",
-          "options": [
-            "Paris",
-            "London",
-            "Berlin",
-            "Rome"
-          ],
-          "answer": "Berlin"
-        }
-      ]
+        "id": 1,
+        "title": "Exam 1",
+        "description": "This is the first exam.",
+        "isActivated": true,
+        "created_at": "2020-05-01T00:00:00.000Z",
+        "updated_at": null,
+        "created_by": "admin",
+        "quizQuestions": [
+            {
+            "id": 1,
+            "question": "What is the capital of France?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Paris"
+            },
+            {
+            "id": 2,
+            "question": "What is the capital of Germany?",
+            "options": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Berlin"
+            }
+        ]
     }
     
 
@@ -95,7 +95,7 @@ Example:
     
 ```json
 Response:
-        [
+[
        {
         "id": 1,
         "title": "Exam 1",
@@ -195,7 +195,7 @@ Response:
             }
         ]
     }
-    ]
+]
 ```
     
 
@@ -259,7 +259,12 @@ Get a quiz question and answer by id.
 Example:
 
     GET /quiz/1
-    
+
+    URL Params:
+    id = 1
+
+    URL Just for testing:
+            [https://nodemysqlcrud.herokuapp.com/quiz/1](https://nodemysqlcrud.herokuapp.com/quiz/1)
 
 Response:
 ```JSON
@@ -284,14 +289,59 @@ Update a quiz question and answer by id.
 
 Example:
 
+URL Just be like this:
+https://nodemysqlcrud.herokuapp.com/quiz/3
+
+Body:
+```json
+{
+    "title": "Updated Math Quiz",
+    "description": "An updated quiz to test your math skills.",
+    "quizQuestions": [
+        {
+            "id": 1,
+            "question": "What is 2 + 2?",
+            "options": [
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "answer": "4"
+        },
+        {
+            "id": 2,
+            "question": "What is the square root of 100?",
+            "options": [
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            "answer": "10"
+        },
+        {
+            "id": 3,
+            "question": "What is 4 x 4?",
+            "options": [
+                "12",
+                "14",
+                "16",
+                "18"
+            ],
+            "answer": "16"
+        }
+    ],
+    "isActivated": true,
+    "created_by": "admin"
+}
+```
+
 PUT /quiz/1
 ```JSON
 {
-    "title": "This is the first question. Again updated",
-    "description": "This is the fourth exam.",
-    "quizQuestions": "[{\"id\": 1, \"answer\": \"Paris\", \"options\": [\"Paris\", \"London\", \"Berlin\", \"Rome\"], \"question\": \"What is the capital of France?\"}, {\"id\": 2, \"answer\": \"Berlin\", \"options\": [\"Paris\", \"London\", \"Berlin\", \"Rome\"], \"question\": \"What is the capital of Germany?\"}]",
-    "isActivated": 1,
-    "created_by": "admin"
+    "error": false,
+    "message": "Quiz successfully updated"
 }
 ```   
     
@@ -312,15 +362,21 @@ Delete a quiz question and answer by id.
 
 Example:
 
-    DELETE /quiz/1
-    
+DELETE /quiz/1
+
+Parameters:
+
+  * id: Quiz id
+
+URL Just like this : https://nodemysqlcrud.herokuapp.com/quiz/3
 
 Response:
-
-      {
-        "message": "Quiz deleted successfully."
-      }
-    
+```JSON
+  {
+    "error": false,
+    "message": "Quiz successfully deleted"
+  }
+```
 
 Quiz API Source Code
 --------------------
